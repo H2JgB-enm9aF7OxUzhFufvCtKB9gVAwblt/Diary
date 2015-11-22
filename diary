@@ -1,3 +1,46 @@
+2015-11-21
+Play with Github, push, fetch, merge, and pull.
+I learned there are https authentification and ssh authentification.
+I create some repository from github and clone it. Then, I experiment between the cloned local repository and the github repository.
+
+HTTPS
+Github set the default clone url to https so I experienced https first. Https authentification is simple than I thought. I encounter prompt for inputting userID and password in the experiment, push phase, and authentification is done.
+If I don't want to enter these repeatedly, I can use .netrc (with gpg) or GNOME Keyring or credential.helper[1] (cache or store). The first one is hyper simple but insecure if it is without encryption. Actually, I first tried plain ~/.netrc and enjoyed interaction with Github.
+
+[1]
+Caching your GitHub password in Git - User Documentation
+https://help.github.com/articles/caching-your-github-password-in-git/
+
+SSH
+I just followed this and done.
+Generating SSH keys - User Documentation
+https://help.github.com/articles/generating-ssh-keys/
+
+I'm using ssh now for Github.
+
+
+hub - makes git better with GitHub
+I install hub because I want to create github repository from commandline.
+
+github/hub
+https://github.com/github/hub
+hub · the command-line wrapper for git
+https://hub.github.com/
+
+Before install hab, I installed Go, followed the second link.
+
+The Go Programming Language
+https://golang.org/
+Getting Started - The Go Programming Language
+https://golang.org/doc/install
+
+
+Minor things
+git add - 'git add --patch' to include new files? - Stack Overflow
+http://stackoverflow.com/questions/14491727/git-add-patch-to-include-new-files
+
+
+
 2015-11-20
 I perform this.
 
