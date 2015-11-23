@@ -1,3 +1,20 @@
+2015-11-23
+Leaning ssh.
+
+
+Create list function and elist alias for my everything notes.
+list () {
+	echo "$*" >> ~/directories/list
+}
+alias elist='e ~/directories/list'   # I set 'vim' 'e' for shell.
+
+
+Creating Now function.
+Part of sample:
+while true; do cat ~/directories/now.list | aosd_cat --position 4 --x-offset -50 --y-offset 00 --shadow-offset 0 --transparency 0 --font 'Droid Sans Mono 33' --back-opacity 255 --back-color white --fore-color black --shadow-color white --fore-opacity 255 --fade-in 0 --fade-full 3000 --fade-out 0 ; done
+
+
+
 2015-11-22
 I read about ssh-agent, ssh-add, keychain, etc. I think about what way I do for authentification.
 
