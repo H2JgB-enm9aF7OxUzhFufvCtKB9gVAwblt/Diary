@@ -1,3 +1,26 @@
+2015-11-25
+Work on at command.
+
+Nicely did my morning jobs because I set the at job yesterday, which just show a image of sunrise at the time of sunrise.
+The sunrise image resized by xloadimage's dump option but I can also use gimp as always. I also set sunset by at, but I made mistake setting the image of sunrise, ha ha.
+Sunrise
+http://www.bankoboev.ru/images/NDQ4NDY0/Bankoboev.Ru_krasivoe_nebo_u_shirokih_polei.jpg
+Sunset 
+http://blog-imgs-43.fc2.com/p/h/o/photowindthought/DSC_0008_convert_20111028182857.jpg
+
+Learned how to look inside at jobs.
+at -c job [job...]
+
+See: 
+linux - How do I print contents of at jobs? - Server Fault
+http://serverfault.com/questions/174678/how-do-i-print-contents-of-at-jobs
+
+Leaning English.
+How To Become A Hacker
+http://www.catb.org/~esr/faqs/hacker-howto.html#skills4
+
+
+
 2015-11-24
 Create forever function.
 forever() { while true; do $* ; done }
