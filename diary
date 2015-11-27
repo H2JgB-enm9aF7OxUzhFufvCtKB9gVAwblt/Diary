@@ -1,3 +1,31 @@
+2015-11-26
+Learning English.
+
+Learned this: If I create a at job for the present hour and minute, like creating a at job 20:45 after it's passed but still in the minute, at command set the job for tomorrow.
+From this fact, I think I can create at jobs one by one for a day with not having messy atq output. Still, I have a problem with power-off time.
+
+I created at jobs of sunrise and sunset which works eternally.
+I thought this can be done by cron (which executes at) also, but I slightly like this style (because of sequentiality) so I chose this. Again. Still, I have a problem with power-off time.
+
+sunrise.job~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#! /bin/sh
+
+# Variable: Set environmental variable DISPLAY.
+export DISPLAY=:0.0
+sunrise_time_tomorrow=$(grep $(date --rfc-3339=date --date=tomorrow) ~/directories/sunrise_sunset/sunrise.data | cut -d ' ' -f2)   # I have data list inside sunrise.data, like 2015-11-26 hour:minute, so I can get hour:minute from this command.
+
+# Main process
+xloadimage ~/directories/image/sunrise.jpg   # Seems xloadimage needs & at the end of the line to running background, but I like the idea of sequentiality (atq have always one job for sunrise and sunset). This will be changed sometime, perhaps.
+
+# Loop process for tomorrow
+at -f ~/directories/Sunrise_Sunset/sunrise.job $sunrise_time_tomorrow
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+After create the above, run the below.
+at -f ~/directories/Sunrise_Sunset/sunrise.job 06:00
+
+
+
 2015-11-25
 Work on at command.
 
