@@ -1,3 +1,32 @@
+2015-11-27
+Search meal, trashout, laundry, and instant noodle pic.
+
+Created at.zsh which was sourced by .zshrc.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# at
+
+# at GUI
+def atgui() { echo -n "export DISPLAY=:0.0 ; $1" | at $2 }
+
+# at abbreviation
+def ata() { echo -n "$1" | at $2 }
+
+# at task
+alias meal='echo -n "export DISPLAY=:0.0 ; xloadimage ~/directories/image/meal.jpg" | at'
+alias trashout='echo -n "export DISPLAY=:0.0 ; xloadimage ~/directories/image/trashout.jpg" | at'
+alias laundry='echo -n "export DISPLAY=:0.0 ; xloadimage ~/directories/laundry.png" | at'
+alias instantnoodle='echo -n "export DISPLAY=:0.0 ; xloadimage ~/directories/image/cupnoodle.png" | at now +'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Learn how to set next foobar minutes. (next or +. ex: now + 3min, now + 10 minutes, next day, next hour)   # next seems can't mix with designated time.
+
+Try gxmessage.
+Learning .Xresources.
+Succeed to show international language by xmessage. (Write xmessage*international: True in .Xresources and Run xrdb ~/.Xresources) Ref: https://wiki.archlinux.org/index.php/X_resources
+
+Learning English.
+
+
+
 2015-11-26
 Learning English.
 
