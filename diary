@@ -1,3 +1,42 @@
+2015-11-28
+Create atxmessage in at.zsh
+def atxmessage() { echo -n "export DISPLAY=:0.0 ; xmessage $1" | at $2 }
+
+
+Create textclock. I like this one, though it is flickering. (Workspace change of Xmonad is also disturbed.)
+textclock~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#! /bin/zsh
+
+while true
+do
+  date +%Y-%m-%dT%H:%M:%S%:z |      
+  aosd_cat --position 8 --x-offset 00 --y-offset 00 --shadow-offset 0 --transparency 0 --font 'Droid Sans Mono 10' \
+           --back-opacity 255 --back-color white --fore-color black --shadow-color white --fore-opacity 255 --fade-in 0 --fade-full 1000 --fade-out 0
+done
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+It seems osdclock is very much like my one, but osdclock doesn't have many option to match the looks. Yet it's not flickering, so I have to look inside the source code.
+
+
+Create nt (now task).
+now.list is just a list of my tasks. It keeps under 10 tasks (by my hand) with helping by other list which is mainly full list of my tasks (See: 2015-11-23).
+If I want to do a task now, just add * to the beginning of the line in now.list. This program capture it and show the name of the task by aosd_cat.
+nt~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#! /bin/zsh
+
+grep '^*' ~/directories/now.list | cut --characters 2- > ~/directories/now
+while true
+do
+  aosd_cat --input ~/directories/now --position 7 --x-offset 00 --y-offset -100 --shadow-offset 0 --padding 10 --transparency 0 --font 'Droid Sans Mono 33' \
+           --back-opacity 255 --back-color white --fore-color black --shadow-color white --fore-opacity 255 --fade-in 0 --fade-full 100000 --fade-out 0
+done
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+I installed wmctrl, devilspie, and devilspie2. These won't work in my environment.
+
+
+
 2015-11-27
 Search meal, trashout, laundry, and instant noodle pic.
 
